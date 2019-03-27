@@ -16,10 +16,13 @@ namespace WayaTool
     public partial class Form1 : Form
     {
         Waya waya = new Waya();
+        private string FormName;
 
         public Form1()
         {
             InitializeComponent();
+
+            FormName = Text;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -31,6 +34,10 @@ namespace WayaTool
         {
             if ( openFileDialog1.ShowDialog() == DialogResult.OK)
             {
+                byte[] data = File.ReadAllBytes(openFileDialog1.FileName);
+
+                Text = FormName + " - " + openFileDialog1.FileName + " (" + data.Length.ToString() + " bytes)";
+
                 pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
             }
         }
@@ -40,6 +47,8 @@ namespace WayaTool
             if ( openFileDialog2.ShowDialog() == DialogResult.OK)
             {
                 byte[] data = File.ReadAllBytes(openFileDialog2.FileName);
+
+                Text = FormName + " - " + openFileDialog2.FileName + " (" + data.Length.ToString() + " bytes)";
 
                 Image image = waya.Decompress(data);
 
