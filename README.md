@@ -8,8 +8,8 @@
 
 Сравнение форматов:
 
-![Jpeg](/images/Lena_jpeg.jpg)
+![Jpeg](/images/lena_jpeg.jpg)
 
-![PNG](/images/Lena_png.jpg)
+![PNG](/images/lena_png.jpg)
 
-![Waya](/images/Lena_waya.jpg)
+![Waya](/images/lena_waya.jpg)
